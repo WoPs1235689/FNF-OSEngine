@@ -3163,9 +3163,9 @@ class PlayState extends MusicBeatState
 		setOnLuas('curDecBeat', curDecBeat);
 
 		if(ratingName == '?') {
-			scoreTxt.text = 'Score: ' + songScore + ' / Misses: ' + songMisses + ' / Average: ?' + ' / Accuracy: ?'; 
+			scoreTxt.text = 'Score: ' + songScore + ' / Combo Breaks: ' + songMisses + ' / Average: ?' + ' / Accuracy: ?'; 
 		} else {
-			scoreTxt.text = 'Score: ' + songScore + ' / Misses: ' + songMisses + ' / Average: ' + Math.round(averageMs) + 'ms' + ' / Accuracy: ' + Highscore.floorDecimal(ratingPercent * 100, 2) + '% (' + ratingName + ' - ' + ratingFC + ') ';//peeps wanted no integer ratingx
+			scoreTxt.text = 'Score: ' + songScore + ' / Combo Breaks: ' + songMisses + ' / Average: ' + Math.round(averageMs) + 'ms' + ' / Accuracy: ' + Highscore.floorDecimal(ratingPercent * 100, 2) + '% (' + ratingName + ' - ' + ratingFC + ') ';//peeps wanted no integer ratingx
 		}
 
 		if(botplayTxt.visible) {
