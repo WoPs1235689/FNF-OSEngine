@@ -1378,7 +1378,7 @@ class PlayState extends MusicBeatState
 		#end
 
 		var daSong:String = Paths.formatToSongPath(curSong);
-		if (isStoryMode && !seenCutscene)
+		if (!isStoryMode && !seenCutscene)
 		{
 			switch (daSong)
 			{
@@ -1441,6 +1441,24 @@ class PlayState extends MusicBeatState
 
 				case 'ugh' | 'guns' | 'stress':
 					tankIntro();
+					
+				case 'corn'
+
+				new FlxTimer.start(1, function(tmr:FlxTimer)
+				{
+
+				camHUD.visible = true;
+				FlxTween.tween(FlxG.camera, {zoom: defaultCamZoom}, 1.5, {
+				ease: FlxEase.quadInOut,
+				onComplete: function(twn:FlxTween)
+				{	
+				    boyfriend.playAnim('hey', true); 
+				    startCountDowm();
+				}
+
+				});
+
+			    });	       	
 
 				default:
 					startCountdown();
